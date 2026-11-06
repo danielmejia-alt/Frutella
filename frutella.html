@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frutella · Postres</title>
+  <meta name="description" content="Frutella: postres de fresas con crema, chocolate y frutas frescas, con servicio a domicilio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/frutella_favicon.png">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Frutella, ir al inicio">
+    <img src="images/frutella-navbar-logo.png" alt="Logo de Frutella">
+</a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú de postres</a>
+        <a href="#nosotros">Sobre nosotros</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="openCart" aria-label="Abrir carrito">
+          <img src="images/carro de compra frutella.png" alt="Carrito" class="cart-btn__img">
+<span class="cart-btn__text">Carrito</span>
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__text reveal">
+          <span class="tag">Hechos al momento · Con domicilio</span>
+          <h1>Postres de <em>fresas con crema</em> y chocolate</h1>
+          <p>
+            En Frutella armamos cada postre como si fuera para alguien que queremos mucho.
+            Fruta fresca, crema suave y chocolate derretido. Tú eliges, nosotros lo preparamos.
+          </p>
+          <div class="hero__buttons">
+            <a href="#menu" class="btn btn--primary">Quiero mi postre 🍓</a>
+            <a href="#nosotros" class="btn btn--ghost">Conócenos</a>
+          </div>
+        </div>
+
+        <div class="hero__image reveal">
+          <div class="hero__circle"></div>
+          <img src="images/Copa de fresas con chocolate y crema.png" alt="Postre de fresas con crema y chocolate" class="hero__cup" />
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tag">Nuestro menú</span>
+          <h2>Elige tu postre</h2>
+          <p>Todos se preparan al momento. Personaliza el tamaño y los toppings.</p>
+        </div>
+
+        <div class="filters reveal" id="filters">
+          <button class="filter is-active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="fresa">Fresa</button>
+          <button class="filter" data-filter="banano">Banano</button>
+          <button class="filter" data-filter="arandano">Arándanos</button>
+          <button class="filter" data-filter="combo">Para compartir</button>
+        </div>
+
+        <div class="grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="container about__inner">
+        <div class="about__photos reveal">
+          <img src="images/Mujer feliz disfrutando fresas con chocolate.png" alt="Clienta disfrutando un postre de fresas con crema" class="about__photo about__photo--main" />
+          <img src="images/Kiosco Frutella de fresas y crema.png" alt="Carrito de postres Frutella" class="about__photo about__photo--small" />
+        </div>
+
+        <div class="about__text reveal">
+          <span class="tag">Sobre nosotros</span>
+          <h2>Nacimos de un antojo</h2>
+          <p>
+            Frutella empezó con una idea sencilla: que un postre de fresas con crema pudiera
+            sentirse como un abrazo. Empezamos preparándolos en casa para familia y amigos,
+            y poco a poco se volvió un sueño compartido.
+          </p>
+          <p>
+            Hoy seguimos eligiendo la fruta nosotros mismos, cada mañana, y armamos cada postre
+            a mano, ya sea en nuestro carrito o en la puerta de tu casa.
+          </p>
+          <ul class="about__values">
+            <li>Fruta fresca todos los días</li>
+            <li>Chocolate y crema de verdad</li>
+            <li>Servicio a domicilio</li>
+            <li>Hecho con cariño</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <img src="images/kgyfytudrtshjrstdlitguyoñ8kjv.png" alt="Compartiendo un postre de arándanos con chocolate" />
+      <div class="strip__text reveal">
+        <h2>Los postres se disfrutan mejor en compañía</h2>
+        <a href="#menu" class="btn btn--primary">Pedir ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="logo logo--light">frutella<span></span></div>
+      <p>Postres de fresas con crema · Pedidos por WhatsApp</p>
+      <a class="footer__wa" href="https://wa.me/573053036580" target="_blank" rel="noopener">📲 305 303 6580</a>
+      <small>© <span id="year"></span> Frutella. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <div class="modal" id="customModal" role="dialog" aria-modal="true" aria-labelledby="customTitle" hidden>
+    <button class="modal__close" id="closeCustom" aria-label="Cerrar">✕</button>
+    <h3 id="customTitle">Personaliza tu postre</h3>
+
+    <form id="customForm">
+      <fieldset>
+        <legend>Tamaño</legend>
+        <div id="sizeOptions" class="options"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Toppings extra</legend>
+        <div id="toppingOptions" class="options"></div>
+      </fieldset>
+
+      <label class="field">
+        <span>Cantidad</span>
+        <div class="qty">
+          <button type="button" id="customMinus" aria-label="Menos">−</button>
+          <output id="customQty">1</output>
+          <button type="button" id="customPlus" aria-label="Más">+</button>
+        </div>
+      </label>
+
+      <button type="submit" class="btn btn--primary btn--block">
+        Añadir al carrito · <span id="customTotal">$0</span>
+      </button>
+    </form>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-label="Carrito de compras" hidden>
+    <div class="drawer__head">
+      <h3 id="drawerTitle">Tu pedido</h3>
+      <button class="modal__close" id="closeCart" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="drawer__step" id="stepCart">
+      <div class="drawer__items" id="cartItems"></div>
+      <div class="drawer__footer">
+        <div class="total-row"><span>Total</span><strong id="cartTotal">$0</strong></div>
+        <button class="btn btn--primary btn--block" id="goCheckout">Continuar con el pedido</button>
+        <button class="link-btn" id="clearCart">Vaciar carrito</button>
+      </div>
+    </div>
+
+    <form class="drawer__step" id="stepCheckout" hidden novalidate>
+      <button type="button" class="link-btn" id="backToCart">← Volver al carrito</button>
+
+      <label class="field">
+        <span>Nombre</span>
+        <input type="text" id="cName" placeholder="Tu nombre" required autocomplete="name" />
+      </label>
+
+      <label class="field">
+        <span>Dirección de entrega</span>
+        <input type="text" id="cAddress" placeholder="Calle, número, barrio" required autocomplete="street-address" />
+      </label>
+
+      <label class="field">
+        <span>Método de pago</span>
+        <select id="cPayment" required>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Transferencia">Transferencia</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Notas adicionales (opcional)</span>
+        <textarea id="cNotes" rows="3" placeholder="Ej: sin chocolate, timbre dañado…"></textarea>
+      </label>
+
+      <p class="form-error" id="formError" role="alert" hidden></p>
+
+      <div class="total-row"><span>Total</span><strong id="checkoutTotal">$0</strong></div>
+      <button type="submit" class="btn btn--wa btn--block">Confirmar y Enviar Pedido 💬</button>
+      <small class="hint">Se abrirá WhatsApp con tu pedido listo para enviar.</small>
+    </form>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="frutella.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="frutella.css">
+<link rel="stylesheet" href="frutella.js">
